@@ -7,7 +7,7 @@ using practica4to.Models;
 
 namespace practica4to.Services
 {
-    public class PizzaService
+    public static class PizzaService
     {
         static List<Pizza> Pizzas {get;}
         static int nextId = 3;
@@ -17,7 +17,7 @@ namespace practica4to.Services
             Pizzas = new List<Pizza>
             {
                 new Pizza { Id = 1, Name = "Clasica queso", IsGlutenFree = false },                
-                new Pizza { Id = 2, Name = "Clasica queso y jamon", IsGlutenFree = false },
+                new Pizza { Id = 2, Name = "Clasica queso y jamon", IsGlutenFree = false }
             };
 
         }

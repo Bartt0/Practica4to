@@ -2,11 +2,39 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using practica4to.Models;
+using practica4to.Services;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace practica4to.Controllers
 {
-    public class PizzaControllers
+    [ApiController]
+    [Route("[controller]")]
+    public class PizzaControllers : ControllerBase
     {
+        public PizzaControllers()
+        {
+
+
+        }
+
+            [HttpGet]
+            public ActionResult<List<Pizza>> GetAll() => PizzaService.GetAll();
+
+            [HttpGet("{id}")]
+            public ActionResult<Pizza> Get (int id)
+            {
+                var Pizza = PizzaService.Get(id);
+                if(Pizza == null)
+                    return NotFound();
+
+                    return Pizza;
+                
+            }
+
+
+
         
     }
 }
