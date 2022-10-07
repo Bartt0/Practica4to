@@ -43,6 +43,16 @@ namespace practica4to.Services
 
     }
 
+    public static void Update(Pizza pizza)
+    {
+        var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
+        if (index == -1)
+        return;
+
+        Pizzas[index] = pizza;
+
+    }
+
 
 
 
