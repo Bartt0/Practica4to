@@ -33,6 +33,16 @@ namespace practica4to.Services
 
     }
 
+    public static void Delete(int id)
+    {
+        var pizza = Get(id);
+        if(pizza is null)
+            return;
+
+            Pizzas.Remove(pizza);
+
+    }
+
 
 
 
