@@ -34,6 +34,15 @@ namespace practica4to.Controllers
             }
 
 
+            [HttpPost]
+            public IActionResult Create (Pizza pizza)
+            {
+                PizzaService.Add(pizza); 
+                return CreatedAtAction(nameof(Create),new {id = pizza},pizza);
+            }
+
+
+
 
         
     }
