@@ -26,6 +26,14 @@ namespace practica4to.Services
     public static Pizza Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
 
 
+    public static void Add(Pizza pizza)
+    {
+        pizza.Id = nextId++;
+        Pizzas.Add(pizza);
+
+    }
+
+
 
 
     }
